@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: wisecow
-        image: <DOCKERHUB_USERNAME>/kkrish-wisecow:latest
+        image: kkrish7/kkrish-wisecow:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 4499
