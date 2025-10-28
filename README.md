@@ -45,9 +45,9 @@ In this repository, you’ll find:
 
 - `wisecow.sh` – The Wisecow server script
 - `Dockerfile` – Container definition for the app
-- `deployment.yaml` and `service.yaml` – Kubernetes manifests
+- `deployment.yaml`, `service.yaml`, `ingress.yaml`, `cluster-issuer.yaml` – Kubernetes manifests
 - `.github/workflows/ci.yml` – GitHub Actions for CI/CD (build, push, deploy)
-- TLS configuration files/manifests/scripts (if applicable)
+- TLS configuration using Cluster Issuer and Cert-Manager
 
 ***
 
@@ -64,14 +64,16 @@ Open your browser at (http://localhost:4499).
 ### Build Container
 
 ```bash
-docker build -t wisecow:latest .
+docker build -t kkrish7/kkrish-wisecow:latest .
 ```
 
 ### Deploy to Kubernetes
 
 ```bash
 kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
+kubectl apply -f service.y
+kubectl apply -f ingress.yaml
+kubectl apply -f cluster-issuer.yaml
 ```
 *The app will be available at the exposed service port.*
 
@@ -90,7 +92,7 @@ Automatic build/push/deploy using GitHub Actions on push to `main`.
 
 ## 🔒 TLS Support
 
-Check manifests/docs for setting up secure HTTPS access to the Wisecow application.
+- Created TLS Certificate using Cluster issuer and Cert manager.
 
 ***
 
