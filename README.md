@@ -46,7 +46,7 @@ In this repository, you’ll find:
 - `wisecow.sh` – The Wisecow server script
 - `Dockerfile` – Container definition for the app
 - `deployment.yaml`, `service.yaml`, `ingress.yaml`, `cluster-issuer.yaml` – Kubernetes manifests
-- `.github/workflows/ci.yml` – GitHub Actions for CI/CD (build, push, deploy)
+- `.github/workflows/ci-cd.yaml` – GitHub Actions for CI/CD (build, push, deploy)
 - TLS configuration using Cluster Issuer and Cert-Manager
 
 ***
