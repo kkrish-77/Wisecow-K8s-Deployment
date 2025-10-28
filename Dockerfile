@@ -1,6 +1,6 @@
-FROM alpine:3.19
+FROM ubuntu:latest
 
-RUN apk add --no-cache bash fortune-mod cowsay curl
+RUN apt-get update && apt-get install -y cowsay fortune bash curl
 
 WORKDIR /app
 
